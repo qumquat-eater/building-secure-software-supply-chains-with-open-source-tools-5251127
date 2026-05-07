@@ -34,6 +34,7 @@ jobs:
           path: .
           fetch-depth: 1
       - run:
+          npm install
           npm install --package-lock-only
       - uses: aquasecurity/trivy-action@v0.36.0
         with:
