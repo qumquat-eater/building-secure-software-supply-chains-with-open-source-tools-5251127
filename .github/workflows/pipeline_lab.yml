@@ -69,11 +69,7 @@ jobs:
   report:
     runs-on:
       ubuntu-latest
-    needs:
-      trivy_container_scan
-      sbom_scan
-      trivy_dependency_scan
-      gitleaks_scan
+    needs: ['trivy_container_scan','sbom_scan','trivy_dependency_scan','gitleaks_scan']  
     if: always()
     steps:
       - run:
