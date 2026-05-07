@@ -36,7 +36,7 @@ jobs:
           npm install --package-lock-only
       
       - name: Trivy FS
-        uses: aquasecurity/trivy-action@0.32.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: 'fs'
           scan-ref: './juice-shop-src'
@@ -55,7 +55,7 @@ jobs:
     needs: setup
     steps:
       - name: Scan public image
-        uses: aquasecurity/trivy-action@0.32.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: 'bkimminich/juice-shop:latest'
           vuln-type: 'os'  # base image + app deps
