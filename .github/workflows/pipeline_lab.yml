@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: anchore/sbom-action@v0
         with:
-          image: juice-shop/juice-shop
+          image: bkimminich/juice-shop
           artifact-name: 'sbom.json'
       - uses: anchore/scan-action@v7
         with:
