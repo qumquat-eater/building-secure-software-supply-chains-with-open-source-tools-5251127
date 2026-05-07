@@ -73,7 +73,7 @@ jobs:
     if: always()
     steps:
       - run:
-          echo "SBOM Check- ${{needs.sbom_scan.result}}"
-          echo "Trivy Container Scan- ${{needs.trivy_container_scan.result}}"
-          echo "Trivy Dependency Scan- ${{needs.trivy_dependency_scan.result}}"
-          echo "Gitleaks Scan- ${{needs.gitleaks_scan.result}}"
+          echo "SBOM Check- ${{needs.sbom_scan.result}}" >> $GITHUB_STEP_SUMMARY
+          echo "Trivy Container Scan- ${{needs.trivy_container_scan.result}}" >> $GITHUB_STEP_SUMMARY 
+          echo "Trivy Dependency Scan- ${{needs.trivy_dependency_scan.result}}" >> $GITHUB_STEP_SUMMARY
+          echo "Gitleaks Scan- ${{needs.gitleaks_scan.result}}" >> $GITHUB_STEP_SUMMARY
