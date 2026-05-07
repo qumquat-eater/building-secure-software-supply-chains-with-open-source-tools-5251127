@@ -16,7 +16,7 @@ jobs:
 
       # Image vulnerability scan (prints to logs; no files)
       - name: Trivy scan of OWASP Juice Shop image
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: docker.io/bkimminich/juice-shop:latest
           ignore-unfixed: true
