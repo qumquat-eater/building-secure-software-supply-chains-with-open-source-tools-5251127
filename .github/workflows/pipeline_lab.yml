@@ -66,3 +66,18 @@ jobs:
         with:
           sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
           fail-build: false
+    report:
+      runs-on:
+        ubuntu-latest
+      needs:
+        trivy_container_scan
+        sbom_scan
+        trivy_dependency_scan
+        gitleaks_scan
+      if: always()
+      steps:
+        - run:
+            echo "SBOM Check- ${{needs.sbom_scan.result}}"
+            echo "Trivy Container Scan- ${{needs.trivy_container_scan.result}}"
+            echo "Trivy Dependency Scan- ${{needs.trivy_dependency_scan.result}}"
+            echo "Gitleaks Scan- ${{needs.gitleaks_scan.result}}"
