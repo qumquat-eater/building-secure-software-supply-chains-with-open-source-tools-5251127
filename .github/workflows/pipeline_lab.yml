@@ -23,3 +23,15 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+  trivy_dependency_scan:
+    needs: 'setup'
+    runs-on:
+      ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: juice-shop/juice-shop
+          path: .
+          fetch-depth: 1
+      - run:
+          ls
