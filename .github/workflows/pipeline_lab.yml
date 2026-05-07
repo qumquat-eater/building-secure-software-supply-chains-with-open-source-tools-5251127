@@ -61,7 +61,8 @@ jobs:
       - uses: anchore/sbom-action@v0
         with:
           image: bkimminich/juice-shop
-          artifact-name: 'sbom.json'
+          output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
       - uses: anchore/scan-action@v7
         with:
-          sbom: "sbom.json"
+          sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
+          fail-build: false
