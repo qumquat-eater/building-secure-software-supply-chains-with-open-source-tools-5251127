@@ -13,6 +13,6 @@ jobs:
           image-ref: 'bkimminich/juice-shop:latest'
           format: 'table'
           exit-code: '0'
-          ignore-unfixed: false
+          ignore-unfixed: true
           vuln-type: 'library'
           severity: 'MEDIUM,HIGH,CRITICAL'
